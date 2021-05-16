@@ -51,8 +51,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setMessage("MADness");
                 builder.setTitle("Profile");
+                builder.setMessage(u.name);
                 builder.setCancelable(false);
                 builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
                     @Override
@@ -66,6 +66,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(context, MainActivity.class);
                         Bundle extras = new Bundle();
+                        extras.putInt("id",position);
                         extras.putString("Name", u.getName());
                         extras.putString("Des", u.getDescription());
                         intent.putExtras(extras);

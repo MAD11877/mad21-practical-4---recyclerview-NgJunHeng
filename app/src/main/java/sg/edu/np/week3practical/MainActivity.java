@@ -16,12 +16,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtName;
     private TextView txtDescription;
 
+
     //User user1 = new User("Ng","HEHE",1,false);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        int id = getIntent().getIntExtra("id",0);
 
         Log.v(TAG,"Create");
 
@@ -32,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
         this.txtDescription = findViewById(R.id.txtDescription);
 
         Intent receivedData = getIntent();
-        User user = new User(receivedData.getStringExtra("Name"), receivedData.getStringExtra("Des"),1,false);
-
+        User user = new User(receivedData.getStringExtra("Name"), receivedData.getStringExtra("Des"),0,false);
         this.txtName.setText(user.getName());
         this.txtDescription.setText(user.getDescription());
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     button.setText("Follow");
                     user.setFollowed(false);
                     Toast.makeText(getApplicationContext(),"Unfollowed",Toast.LENGTH_SHORT).show();
-
+                    
                 }
                 else
                 {
