@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int id = getIntent().getIntExtra("id",0);
+       // int id = getIntent().getIntExtra("id",0);
 
         Log.v(TAG,"Create");
 

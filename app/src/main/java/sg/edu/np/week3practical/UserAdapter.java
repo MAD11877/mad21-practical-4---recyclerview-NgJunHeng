@@ -66,7 +66,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(context, MainActivity.class);
                         Bundle extras = new Bundle();
-                        extras.putInt("id",position);
+                        //extras.putInt("id",position);
                         extras.putString("Name", u.getName());
                         extras.putString("Des", u.getDescription());
                         intent.putExtras(extras);
