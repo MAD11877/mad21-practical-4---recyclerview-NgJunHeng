@@ -78,7 +78,6 @@ public class ListActivity extends AppCompatActivity {
     private void userPressed()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("MADness");
         builder.setTitle("Profile");
         builder.setCancelable(false);
         builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {

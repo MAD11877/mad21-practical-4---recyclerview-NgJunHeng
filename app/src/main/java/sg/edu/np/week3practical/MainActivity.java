@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         {
             button.setText("Unfollow");
         }
-        
+
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
