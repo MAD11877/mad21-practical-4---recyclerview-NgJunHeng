@@ -22,13 +22,14 @@ public class ListActivity extends AppCompatActivity {
     private final static String TAG = "Main Activity";
     private TextView message;
 
+    static ArrayList<User> userList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ArrayList<User> userList = new ArrayList<>();
+
 
         for (int i = 0; i < 20; i++)
         {

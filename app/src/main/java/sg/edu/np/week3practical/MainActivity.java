@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // int id = getIntent().getIntExtra("id",0);
+        int id = getIntent().getIntExtra("id",0);
+        User currentUser = ListActivity.userList.get(id);
 
         Log.v(TAG,"Create");
 
@@ -42,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
 //        int myNum =receivedData.getIntExtra("Number" ,0);
 //        tv1.setText("MAD " + myNum);
 
+        if(currentUser.followed == false)
+        {
+            button.setText("Follow");
+        }
+        else
+        {
+            button.setText("Unfollow");
+        }
+        
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -49,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 if(user.isFollowed() == true)
                 {
+                    currentUser.followed =false;
                     button.setText("Follow");
                     user.setFollowed(false);
                     Toast.makeText(getApplicationContext(),"Unfollowed",Toast.LENGTH_SHORT).show();
@@ -56,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    currentUser.followed =true;
                     button.setText("Unfollow");
                     Toast.makeText(getApplicationContext(),"Followed",Toast.LENGTH_SHORT).show();
                     user.setFollowed(true);
